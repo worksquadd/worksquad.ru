@@ -1,7 +1,7 @@
 services:
     backend:
         build: ./backend
-        container_name: aura_backend
+        container_name: worksquad_backend
         restart: always
         expose:
             - "8000"
@@ -10,7 +10,7 @@ services:
 
     nginx:
         image: nginx:latest
-        container_name: aura_nginx
+        container_name: worksquad_nginx
         restart: always
         ports:
             - "80:80"
@@ -21,6 +21,7 @@ services:
 
     db:
         image: postgres:15-alpine
+        container_name: worksquad_db
         restart: always
         volumes:
         - postgres_data:/var/lib/postgresql/data

@@ -10,9 +10,9 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$SCRIPT_DIR"
 
 # Load local env vars if present
-if [ -f ".env.local" ]; then
+if [ -f ".env.alembic" ]; then
   # shellcheck disable=SC2046
-  export $(grep -v '^#' .env.local | xargs)
+  export $(grep -v '^#' .env.alembic | xargs)
 fi
 
 # Autogenerate a new migration based on the SQLAlchemy models
